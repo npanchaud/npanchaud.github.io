@@ -1,2 +1,1 @@
-# npanchaud.github.io
-test
+# Copyright 2015 Nadia H. Panchaud
