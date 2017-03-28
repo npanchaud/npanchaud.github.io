@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if lt IE 9]> <html class="lt-ie9" lang="en" dir="ltr"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="" lang="en" dir="ltr">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <title>CartoWiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Nadia H. Panchaud">
+    <link rel="icon" href="favicon.ico">
+    <!-- CSS -->
+    <link href="css/spark.css" rel="stylesheet">
+    <!-- JS -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/spark.min.js"></script>
+    <!-- Support for IE8 HTML5 elements -->
+    <!--[if lt IE 9]>
+            <script src="http://codewithspark.com/js/html5shiv.js"></script>
+        <![endif]-->
+    <style>
+    #big-ol-hero {
+        background-color: #e7636c;
+    }
+    </style>
+</head>
+
+<body class="heavy-headings">
+    <!-- NAVIGATION BAR -->
+    <nav class="bar limit center dark sticky" role="navigation">
+        <a class="brand" href="index.html">CartoWiz</a>
+        <button type="button" href="#" class="nav-link btn-touch red">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="10_motivation.html">Motivation</a></li>
+            <li class="active"><a href="#">CartoWiz Model</a></li>
+            <li class="drop">
+                <a href="30_functionality.html">Functionality</a>
+                <div class="box">
+                    <ul class="inner">
+                        <li><a href="31_content_compatibility.html">Content Compatibility</a></li>
+                        <li><a href="32_layer_order.html">Layer Order</a></li>
+                        <li><a href="33_visual_hierarchy.html">Visual Hierarchy</a></li>
+                    </ul>
+                </div>
+            </li>
+<!--             <li><a href="40_color_models.html">Color Models</a></li>
+ -->            <li><a href="50_about.html">About</a></li>
+        </ul>
+    </nav>
+    <main id="main">
+        <!-- CONTENT -->
+        <section class="container limit">
+            <div class="row">
+                <section id="teaoverviewching" class="col of-12 skinny">
+                    <h2 class="underlined">Overview</h2>
+                    <p>Before I could develop the tools to help create better maps on geoportals, I had to decide how to model the different elements of a map. Imagine, before you can bake an amazing pie (yummy!), you need to identify the ingredients, their roles and in which order to add them to the batter.</p>
+                    <p>Well, first I look into the ingredient for a map and how they relate to each other. Then, I look into the sequence of tasks and decisions that a cartographer would go though in the map-making process. Many of these aspects have already been researched by previous scholars, but I had to bring them into a model compatible with the context of geoportals.</p>
+                    <p>The model I developped and the rules associates to it are called CartoWiz. </br> Which is what came out of mixing [ <span class="tag red">Cartography</span> + <span class="tag red">Wizard</span> + <span class="tag red">Vis(ualization)</span> ].</p>
+                </section>
+            </div>
+               <div class="row">
+                <section class="col of-12 skinny">
+                <h2 class="underlined">Contextual Map Model</h2>
+                <p>The Contextual Map Model provides the basic elements onto which I could formalize cartographic principles into strict rules, that could then be implemented as functions into a geoportal. It includes among other element a map object, layer object, feature objects, style and rule object. In the image below, you find a simplified representation of the contextual map model. In the section further down, some of the parameters of the model are explained more in detailed</p>
+               <p><img src="img/data_model_simplified.svg"></p>
+                </section>
+            </div>
+            <div class="row">
+                <section id="maptypes" class="col of-12 skinny">
+                    <h2 class="underlined">Map Types</h2>
+                    <p>If you like maps, you probably already realized that maps can look very different from each other as well as serve different purposes. This is what we call map types. Because of the variety of maps and of their content, the map making and design process is such a broad topic. So broad that it would be a unending task. Which is why, we decided to focus on a few map types, the ones that are the most used with the data usually available on geoportals.</p>
+<!--                     <div class="row">
+ -->                        <section class="col of-3 skinny">
+                            <h6>General-purpose maps</h6>
+                            <p class="push-80" >General-purpose maps focus on displaying the main feature of an area, both physical and man-made. They helps with orientation and understanding the spatial organization of a territory.</p>
+                            <img src="img/map_general_small2.png" width="202" class="center shadow">
+                        </section>
+                        <section class="col of-3 skinny">
+                            <h6>Physical maps</h6>
+                            <p class="push-60">Physical maps focus on displaying the topographic features of the landscape, such as mountains, rivers and lakes. They might also show a few cultural information to help with the orientation.</p>
+                            <img src="img/map_physical_small2.png" width="202" class="center shadow">
+                        </section>
+                        <section class="col of-3 skinny">
+                            <h6>Political maps</h6>
+                            <p>Political maps focus on showing administrative boundaries (national, regional, and/or local) and labelling places (cities, regions, countries, etc). They rarely show details of the topography, but might display rivers and water bodies to help with the orientation.</p>
+                            <img src="img/map_political_small.png" width="202" class="center shadow">
+                        </section>
+                        <section class="col of-3 skinny">
+                            <h6>Thematic maps</h6>
+                            <p class="push-40">Thematic maps focus on a specific topic and display thematic data, such as statistics for administrative units or pollution values for a stream. They show some geographic and cultural features for orientation purposes but focus on spatial data with z (or attribute values).</p>
+                            <img src="img/map_thematic_small.png" width="202" class="center shadow">
+                        </section>
+<!--                     </div>
+ -->                </section>
+            </div>
+            <div class="row">
+                <section id="layers" class="col of-12 skinny">
+                    <h2 class="underlined">Layer Semantics</h2>
+                    <p>As a cartographer, so many decisions I take while I design a map are based on the content of the map and not just on the geometry or data type of the information. A computer can know whether the spatial data have polygon or line geometries or whether the values of the attributes are text or numbers, but it cannot guess the meaning of the content: is this line a river or an administrative border? Is this forest or a lake?</p>
+                    <p>Well, it cannot, as long as you don't tell it.</p>
+                    <p>This means that we need a way to tell the computer what is the semantic (= related to meaning) of the data. After a survey of more than 20 national or regional geoportals, we were able to have an a suitable overview of the content of such geoportals. It allows us to define categories and themes of the most often encountered spatial data.</p>
+                </section>
+            </div>
+            <div class="row">
+                <section id="layer_category" class="col of-6 skinny">
+                    <h4>Layer Categories</h4>
+                    <p>Layer categories broadly describe the kind of content of the layers. Major distinctions are made between geographical objects (such as a road or a river) and thematic dat (such as population density or air pollution levels). Among geographic objects another difference is made between “natural” objects and “man-made” objects.</p>
+                </section>
+                <section id="layer_theme" class="col of-6 skinny">
+                    <h4>Layer Themes</h4>
+                    <p>Layer themes allow a finer differentiation among the topics covered by the layers and usually group features that are similar in terms of semantic and symbolization.</p>
+                </section>
+            </div>
+            <div class="row">
+                <section id="main_layer" class="col of-12 skinny">
+                    <h4>Main Layers</h4>
+                    <p>The main layers on the map are the ones that are central to the meaning and theme of the map. They are the ones that should be displayed prominently. Other layers are either secondarily important to the map or they are 'only' on the map as supporting information in the background.</p>
+                </section>
+            </div>
+            <!--<div class="row">
+             <section id="geometry" class="col of-12 skinny">
+                <h2 class="underlined">Geometry Roles</h2>
+                </section>
+            </div>
+        </section>
+    </main>-->
+            <!-- FOOTER -->
+            <footer class="container limit" id="page-footer">
+                <div class="row">
+                    <div class="center col of-12">
+                        2015 - 2017 © Nadia H. Panchaud
+                    </div>
+                </div>
+            </footer>
+</body>
+
+</html>
