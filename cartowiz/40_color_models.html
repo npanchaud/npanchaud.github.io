@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if lt IE 9]> <html class="lt-ie9" lang="en" dir="ltr"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="" lang="en" dir="ltr">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <title>CartoWiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Nadia H. Panchaud">
+    <link rel="icon" href="favicon.ico">
+    <!-- CSS -->
+    <link href="css/spark.css" rel="stylesheet">
+    <!-- JS -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/spark.min.js"></script>
+    <!-- Support for IE8 HTML5 elements -->
+    <!--[if lt IE 9]>
+            <script src="http://codewithspark.com/js/html5shiv.js"></script>
+        <![endif]-->
+    <style>
+    #big-ol-hero {
+        background-color: #e7636c;
+    }
+    </style>
+</head>
+
+<body class="heavy-headings">
+    <!-- NAVIGATION BAR -->
+    <nav class="bar limit center dark sticky" role="navigation">
+        <a class="brand" href="index.html">CartoWiz</a>
+        <button type="button" href="#" class="nav-link btn-touch red">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="10_motivation.html">Motivation</a></li>
+            <li><a href="20_model.html">CartoWiz Model</a></li>
+            <li class="drop">
+                <a href="30_functionality.html">Functionality</a>
+                <div class="box">
+                    <ul class="inner">
+                        <li><a href="31_content_compatibility.html">Content Compatibility</a></li>
+                        <li><a href="32_layer_order.html">Layer Order</a></li>
+                        <li><a href="33_visual_hierarchy.html">Visual Hierarchy</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="active"><a href="#">Color Models</a></li>
+            <li><a href="50_about.html">About</a></li>
+        </ul>
+    </nav>
+    <main id="main">
+<!-- CONTENT -->
+        <section class="container limit">
+            <div class="row">
+             <section id="intro" class="col of-12 skinny">
+                <h2 class="underlined">Color Space Models</h2>
+                <p>This page covers the basics about different color models, their strengths and their weakness in the context of web mapping and color transformations.</p>
+                <p> Why does it matter? These color space models try to mathematically represent color, but how we (human) perceive colors and their difference is tricky and far from simple.
+                </section>
+            </div>
+            <div class="row">
+             <section id="rgb" class="col of-8 skinny">
+                <h4 class="underlined">RGB <span class="alt">Red Green Blue</span></h4>
+                <p>RGB stands for the red, green and blue light of this additive color model. It does not define what is meant with red, green, and blue colorimetrically, but how much of each color is included in the mix. Thus, RGB is a device-dependent color model and a RGB value does not define the same color across devices without some kind of color management. <p>
+                </p>Colors are expressed as RGB triplets (r,g,b), each component of which can vary from zero to a defined maximum value. If all the components are at zero the result is black; if all are at maximum, the result is the brightest representable white. The ranges can be expressed from 0 to 1 with any fractional values in between, or as percentage from 0% to 100%; or in computer as they are often stored as integer numbers from 0 to 255, which is the range of a single 8-bit byte.</p>
+                </section>
+                <section class="col of-4 skinny"></section>
+            </div>
+             <div class="row">
+             <section id="hex" class="col of-8 skinny">
+                <h4 class="underlined">HEX <span class="alt">Hexadecimal notation</span></h4>
+                <p>A hex triplet is a six-digit, three-byte hexadecimal number. The bytes represent the red, green and blue components of the color. One byte represents a number in the range 00 to FF (in hexadecimal notation). Web colors specify colors in the Truecolor (24-bit RGB) color scheme. It is often used to represent the RGB color model.</p>
+                </section>
+                <section class="col of-4 skinny"></section>
+            </div>
+             <div class="row">
+             <section id="hsv" class="col of-12 skinny">
+                <h4 class="underlined">HSV <span class="alt">Hue Saturation Value</span> and HSL <span class="alt">Hue Saturation Lightness</span></h4>
+                </section>
+            </div>
+                         <div class="row">
+             <section id="lch" class="col of-12 skinny">
+                <h4 class="underlined">CIE L * a * b  <span class="alt">Lightness Yellow-blue axis Green-magenta axis</span></h4>
+                </section>
+            </div>
+             <div class="row">
+             <section id="lch" class="col of-12 skinny">
+                <h4 class="underlined">LCH <span class="alt">Luminance Chroma Hue</span></h4>
+                </section>
+            </div>
+
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer class="container limit" id="page-footer">
+        <div class="row">
+            <div class="center col of-12">
+                2015 - 2017 © Nadia H. Panchaud
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

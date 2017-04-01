@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if lt IE 9]> <html class="lt-ie9" lang="en" dir="ltr"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="" lang="en" dir="ltr">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <title>CartoWiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Nadia H. Panchaud">
+    <link rel="icon" href="favicon.ico">
+    <!-- CSS -->
+    <link href="css/spark.css" rel="stylesheet">
+    <!-- JS -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/spark.min.js"></script>
+    <!-- Support for IE8 HTML5 elements -->
+    <!--[if lt IE 9]>
+            <script src="http://codewithspark.com/js/html5shiv.js"></script>
+        <![endif]-->
+    <style>
+    #big-ol-hero {
+        background-color: #e7636c;
+    }
+    </style>
+</head>
+
+<body class="heavy-headings">
+    <!-- NAVIGATION BAR -->
+    <nav class="bar limit center dark sticky" role="navigation">
+        <a class="brand" href="index.html">CartoWiz</a>
+        <button type="button" href="#" class="nav-link btn-touch red">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="10_motivation.html">Motivation</a></li>
+            <li><a href="20_model.html">CartoWiz Model</a></li>
+            <li class="drop active">
+                <a href="30_functionality.html">Functionality</a>
+                <div class="box">
+                    <ul class="inner">
+                        <li><a href="#">Content Compatibility</a></li>
+                        <li><a href="32_layer_order.html">Layer Order</a></li>
+                        <li><a href="33_visual_hierarchy.html">Visual Hierarchy</a></li>
+                    </ul>
+                </div>
+            </li>
+<!--             <li><a href="40_color_models.html">Color Models</a></li>
+ -->            <li><a href="50_about.html">About</a></li>
+        </ul>
+    </nav>
+    <main id="main">
+        <section class="container limit">
+            <div class="row">
+                <section id="compatibility" class="col of-12 skinny">
+                    <h2 class="underlined">Content Compatibility</h2>
+                    <p>Some combinations of layers, maps scales, and map types are bound to lead to cartographic faux-pas. Thus, we developed rules that try to exclude combinations that would lead to low cartographic quality. But, it is impossible to predict all the possible combinations that the users could make, thus, many of there rules are interpreted as wanring and encourage the users to think about the validity of their choices. A few rules lead to plain errors and require a change in the parameters, either the layer selection or the map type most of the time.</p>
+                </section>
+            </div>
+            <div class="row">
+                <section class="col of-12 skinny">
+                <h4>Cartographic content restrictions</h4>
+                <div class="row">
+                    <section class="col of-6 skinny">
+                        <h5>Based on map type</h5>
+                       <p>This geoportal manages four map types: general-purpose map, physical map, political map, and thematic map. Different map types require different content and rules, which is why you need to assign a map type to the map you are creating.
+                        <ul>
+                            <li><span class="heavy">General-purpose</span> maps focus on displaying the main feature of an area, both physical and man-made. Thus only a couple of thematic layers are allowed for this map type.</li>
+                            <li><span class="heavy">Physical</span> maps focus on displaying the topographic features of the landscape, such as mountains, rivers and lakes. Thus, thematic layers are forbidden and physical layers pertaining to hydrology and other physical topics are required.</li>
+                            <li><span class="heavy"> Political</span> maps focus on showing administrative boundaries (national, regional, and/or local) and labelling places (cities, regions, countries, etc). Thus, thematic layers are forbidden and  there must be at least a administrative border layer.</li>
+                            <li><span class="heavy">Thematic</span> maps focus on a specific topic and display thematic data, such as statistics for administrative units or pollution values for a stream. Thus, thematic layers are required and the natural and cultural layers should not be more than 5 combined.
+                            </li>
+                            <!-- TO DO: when paper published, add the matrix -->
+                        </ul>
+                    </p>
+
+
+                    </section>
+                     <section class="col of-6 skinny">
+                         <h5>Based on map content</h5>
+                         <p>Generally, maps have a certain amount of information, but not too much either. Additionally, they have a main topic and the scales of the layers are comaptible with the scale of the map.
+                         <ul>
+                             <li>Restrictions about the <span class="heavy">number of layers</span> allowed: at least 2 and no more than 12. This was defined as sensible default value based on the examination of several national geoportals nand their content, estimating what would too much information for a single maps based on the content usually offered by the geoportals.</li>
+                             <li>If the user does not set one or two <span class="heavy">main layers</span> for the map, there will be a reminder.</li>
+                             <li><span class="heavy">Scale mismatches</span> are also brought to the attention of the users.</li>
+                             <li>Risk of <span class="heavy">overlaps</span> between polygonal layers are also checked: e.g. landuse with a thematic layer.</li>
+                         </ul></p>
+
+                     </section>
+
+                </div>
+                   <!--  <h4>Rules about layers choices</h4>
+                    <ul>
+                        <li>No more than 12 layers per map. <span class="tag red">[error]</span></li>
+                        <li>At least 3 layers per map. <span class="tag orange">[warning]</span></li>
+                        <li> No more than 3 thematic layers in a map. <span class="tag orange">[warning]</span></li>
+                        <li>Combining polygonal layers displaying landuse and thematic data will lead to overlapping features and lesser readability of the map. <span class="tag orange">[warning]</span></li>
+                        <li>Pre-generated maps are difficult to use in combination with other layers and lead to overlaps. <span class="tag orange">[warning]</span></li>
+                        <li>Rivers and lakes should be selected together usually. <span class="tag orange">[warning]</span></li>
+                        <li>There should be at least one main layer in a map. <span class="tag orange">[warning]</span></li>
+                        <li>One layer cannot be selected twice as main layer. <span class="tag red">[error]</span></li>
+                        <li>Layers that have different scales than the map might be too detailed or not detailed enough. <span class="tag orange">[warning]</span></li>
+                    </ul>
+                    <h4>Rules about map types</h4>
+                    <ul>
+                        <li class="heavy">General Maps</li>
+                        <ul>
+                            <li>There cannot be 2 or more thematic layers. A change in map type or layer selection is required. <span class="tag red">[error]</span></li>
+                        </ul>
+                        <li class="heavy">Physical Maps</li>
+                        <ul>
+                            <li>There must be at least one water layer. <span class="tag red">[error]</span></li>
+                            <li>There must be at least one natural layer of information, which is not a water layer. <span class="tag red">[error]</span></li>
+                            <li>Administrative layers should be the only cultural layers. <span class="tag orange">[warning]</span> </li>
+                            <li>There cannot be a thematic layer. <span class="tag orange">[warning]</span></li>
+                        </ul>
+                            <li class="heavy">Political Maps</li>
+                        <ul>
+                            <li>There must be administrative boundaries. <span class="tag red">[error]</span></li>
+                            <li>There cannot be at hematic layer. <span class="tag orange">[warning]</span></li>
+                            <li>Traditionally, there is little information about the physical landscape, except for rivers and lakes. <span class="tag orange">[warning]</span></li>
+                        </ul>
+                        <li class="heavy">Thematic Maps</li>
+                        <ul>
+                            <li>There must be at least one thematic layer. <span class="tag orange">[warning]</span></li>
+                            <li>The focus is on the thematic information: there should not be many layers of another category. <span class="tag orange">[warning]</span></li>
+                        </ul>
+
+                    </ul> -->
+                </section>
+            </div>
+           <!-- <div class="row">
+                <section class="col of-12 skinny">
+                    <h4>Map Types</h4>
+                    <p>Different map types require different content and rules, which is why you need to assign a map type to the map you are creating.</p>
+                    <div class="row">
+                        <section class="col of-3 skinny">
+                            <h6>General-purpose maps</h6>
+                            <p>General-purpose maps focus on displaying the main feature of an area, both physical and man-made. They helps with orientation and understanding the spatial organization of a territory.</p>
+                            <img src="img/map_general_small.png" width="230" class="center shadow">
+                        </section>
+                        <section class="col of-3 skinny">
+                            <h6>Physical maps</h6>
+                            <p>Physical maps focus on displaying the topographic features of the landscape, such as mountains, rivers and lakes. They might also show a few cultural information to help with the orientation.</p>
+                            <img src="img/map_physical_small.png" width="230" class="center shadow">
+                        </section>
+                        <section class="col of-3 skinny">
+                            <h6>Political maps</h6>
+                            <p>Political maps focus on showing administrative boundaries (national, regional, and/or local) and labelling places (cities, regions, countries, etc). They rarely show details of the topography, but might display rivers and water bodies to help with the orientation.</p>
+                            <img src="img/map_political_small.png" width="230" class="center shadow">
+                        </section>
+                        <section class="col of-3 skinny">
+                            <h6>Thematic maps</h6>
+                            <p>Thematic maps focus on a specific topic and display thematic data, such as statistics for administrative units or pollution values for a stream. They show some geographic and cultural features for orientation purposes but focus on spatial data with z (or attribute values).</p>
+                            <img src="img/map_thematic_small.png" width="230" class="center shadow">
+                        </section>
+                    </div>
+                </section>
+            </div>-->
+
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer class="container limit" id="page-footer">
+        <div class="row">
+            <div class="center col of-12">
+                2015 - 2017 © Nadia H. Panchaud
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

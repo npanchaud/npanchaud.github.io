@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if lt IE 9]> <html class="lt-ie9" lang="en" dir="ltr"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="" lang="en" dir="ltr">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <title>CartoWiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Nadia H. Panchaud">
+    <link rel="icon" href="favicon.ico">
+    <!-- CSS -->
+    <link href="css/spark.css" rel="stylesheet">
+    <!-- JS -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/spark.min.js"></script>
+    <!-- Support for IE8 HTML5 elements -->
+    <!--[if lt IE 9]>
+            <script src="http://codewithspark.com/js/html5shiv.js"></script>
+        <![endif]-->
+    <style>
+    #big-ol-hero {
+        background-color: #e7636c;
+    }
+    </style>
+</head>
+
+<body class="heavy-headings">
+    <!-- NAVIGATION BAR -->
+    <nav class="bar limit center dark sticky" role="navigation">
+        <a class="brand" href="index.html">CartoWiz</a>
+        <button type="button" href="#" class="nav-link btn-touch red">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="10_motivation.html">Motivation</a></li>
+            <li><a href="20_model.html">CartoWiz Model</a></li>
+            <li class="drop active">
+                <a href="#">Functionality</a>
+                <div class="box">
+                    <ul class="inner">
+                        <li><a href="31_content_compatibility.html">Content Compatibility</a></li>
+                        <li><a href="32_layer_order.html">Layer Order</a></li>
+                        <li><a href="33_visual_hierarchy.html">Visual Hierarchy</a></li>
+                    </ul>
+                </div>
+            </li>
+<!--             <li><a href="40_color_models.html">Color Models</a></li>
+ -->            <li><a href="50_about.html">About</a></li>
+        </ul>
+    </nav>
+    <main id="main">
+        <!-- HEADER -->
+        <header class="container limit hero" id="big-ol-hero" role="banner">
+            <h1 class="center push-60">Cartographic Wizard</h1>
+        </header>
+        <!-- GALLERY -->
+        <section class="container limit">
+            <div class="row">
+                <article class="col of-4">
+                    <h3>Layer and Map Compatibility</h3>
+                    <p> Some combinations of layers, maps scales, and map types have a high probability to lead to catrographic faux-pas. This functionality helps prevent such issues.</p>
+                    <p> <a href="31_content_compatibility.html"> >>> More</a></p>
+                </article>
+                <article class="col of-4">
+                    <h3>Layer Order</h3>
+                    <p>Ordering the drawing of the layers properly guarantees to minimize unwanted overlaps and occlusions of mao features by other map features.</p>
+                    <p><a href="32_layer_order.html"><img src="img/ill_layer_order.png"></a></p>
+                    <p> <a href="32_layer_order.html"> >>> More</a></p>
+                </article>
+                <article class="col of-4">
+                    <h3>Visual Hierarchy</h3>
+                    <p>The visual hierarchy in the map organizes the information present between different visual planes depending on the importance of the information for the specific map. The main topic of the map will be in the foreground visuall, so more proeminent. It support an easier and faster reading and understanding of the map content.</p>
+                     <p> <a href="33_visual_hierarchy.html"> >>> More</a></p
+                </article>
+            </div>
+
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer class="container limit" id="page-footer">
+        <div class="row">
+            <div class="center col of-12">
+                2015 - 2017 © Nadia H. Panchaud
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

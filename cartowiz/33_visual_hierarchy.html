@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if lt IE 9]> <html class="lt-ie9" lang="en" dir="ltr"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="" lang="en" dir="ltr">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <title>CartoWiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Nadia H. Panchaud">
+    <link rel="icon" href="favicon.ico">
+    <!-- CSS -->
+    <link href="css/spark.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/twentytwenty.css" type="text/css" media="screen" />
+    <!-- JS -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/spark.min.js"></script>
+    <script src="js/jquery.event.move.js" type="text/javascript"></script>
+    <script src="js/jquery.twentytwenty.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(window).load(function() {
+        $("#comparison_01").twentytwenty();
+    });
+    $(window).load(function() {
+        $("#comparison_02").twentytwenty();
+    });
+    </script>
+    <!-- Support for IE8 HTML5 elements -->
+    <!--[if lt IE 9]>
+            <script src="http://codewithspark.com/js/html5shiv.js"></script>
+        <![endif]-->
+    <style>
+    #big-ol-hero {
+        background-color: #e7636c;
+    }
+    </style>
+</head>
+
+<body class="heavy-headings">
+    <!-- NAVIGATION BAR -->
+    <nav class="bar limit center dark sticky" role="navigation">
+        <a class="brand" href="index.html">CartoWiz</a>
+        <button type="button" href="#" class="nav-link btn-touch red">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="10_motivation.html">Motivation</a></li>
+            <li><a href="20_model.html">CartoWiz Model</a></li>
+            <li class="drop active">
+                <a href="30_functionality.html">Functionality</a>
+                <div class="box">
+                    <ul class="inner">
+                        <li><a href="31_content_compatibility.html">Content Compatibility</a></li>
+                        <li><a href="32_layer_order.html">Layer Order</a></li>
+                        <li><a href="#">Visual Hierarchy</a></li>
+                    </ul>
+                </div>
+            </li>
+            <!--             <li><a href="40_color_models.html">Color Models</a></li>
+ -->
+            <li><a href="50_about.html">About</a></li>
+        </ul>
+    </nav>
+    <main id="main">
+        <!-- CONTENT -->
+        <section class="container limit">
+            <div class="row">
+                <section class="col of-12">
+                    <h2>Visual Hierarchy</h2>
+                    <p>The concept of visual hierarchy, also called ‘figure-ground phenomenon’ or ‘visual level' pertains to the ‘perceptual organisation’ of the map. It enables the map reader to perceive a difference between the information that compose the foreground (figure) and the information in the background (ground). </p>
+                </section>
+            </div>
+            <div class="row">
+                <section class="col of-12">
+                    <h3 class="underlined">Part 1 – Ground Assignment</h3>
+                    <p>The visual level of each layers is determined using information provided by the user and by the geoportal regarding the map and the layers: layer geometries, layer themes and categories, map type and main layers of the map.</p>
+                    <p>The first part of the function goes though the layers and map parameters and assign the layers to one of the three grouns in the cartowiz model: background, middleground, or foreground.</p>
+                </section>
+            </div>
+            <div class="row">
+                <section class="col of-12 skinny">
+                    <h3 class="underlined">Part 2 – Background Symbolization</h3>
+                    <p>The second part of the function can change the symbolization of the background layer(s) to render them less prominent and thus support a better visual hierarchy within the map.</p>
+                    <section class="col of-6 skinny">
+                        <h5>Original - Grayscale (luminance)</h5>
+                        <div id="comparison_01" class='twentytwenty-container'>
+                            <img src="img/00_comparison/001_original.png">
+                            <img src="img/00_comparison/001_gray_luma.png">
+                        </div>
+                    </section>
+                    <section class="col of-6 skinny">
+                        <h5>Grayscale formulae</h5>
+                        <img src="img/00_comparison/3grayscale_example1_animated2.gif">
+                        <p>"Average" method: gray = (R + G + B)/3 </p>
+                        <p>"Desaturation" method: gray = [Max(R,G,B) + Min(R,G,B)]/2</p>
+                        <p>"Luminance" method: gray = R*0.3 + G*0.59 * B*0.11</p>
+                    </section>
+                </section>
+            </div>
+            <div class="row">
+                <section class="col of-12 skinny">
+                    <h5 class="underlined">Smart Background</h5>
+                    <section class="col of-6 skinny">
+                        <div id="comparison_02" class='twentytwenty-container'>
+                            <img src="img/00_comparison/001_smart_original.png">
+                            <img src="img/00_comparison/001_smart_transformed.png">
+                        </div>
+                    </section>
+                    <section class="col of-6 skinny">
+                    </section>
+                </section>
+            </div>
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer class="container limit" id="page-footer">
+        <div class="row">
+            <div class="center col of-12">
+                2015 - 2017 © Nadia H. Panchaud
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
