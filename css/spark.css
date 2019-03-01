@@ -2613,7 +2613,7 @@ nav.bar li.drop:hover > a[href="#"] {
 }
 @media only screen and (min-width: 769px) {
   .stickyglue > nav.bar.limit {
-    max-width: 1320px !important;
+    max-width: 1200px !important;
     margin: auto !important;
   }
   nav.bar,
@@ -2818,7 +2818,7 @@ nav.bar.dark ul li.active > a {
     width: 100%;
   }
   .stickyglue > nav.bar.limit {
-    max-width: 1320px;
+    max-width: 1200px;
   }
   .stickyglue > nav.bar.overhang {
     -webkit-box-shadow: none;
@@ -3997,14 +3997,14 @@ body a.screen-readers.fixed-nav:focus {
   padding: 40px 0;
 }
 .container.limit .nav-container {
-  max-width: 1320px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 .container.limit .row,
 .container.limit .page-heading {
   float: none;
-  max-width: 1320px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
