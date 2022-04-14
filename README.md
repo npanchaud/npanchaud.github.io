@@ -1,1 +1,1 @@
-# Copyright 2015-2017 Nadia H. Panchaud
+# Copyright 2015-2022 Nadia H. Panchaud
